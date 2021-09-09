@@ -283,7 +283,8 @@ class ConfigureHelpdesk extends Controller
             session_start();
         }
 
-        $entityManager = $this->getDoctrine()->getEntityManager();
+        // $entityManager = $this->getDoctrine()->getEntityManager();
+        $entityManager = $this->getDoctrine()->getManager();
 
         $role = $entityManager->getRepository('UVDeskCoreFrameworkBundle:SupportRole')->findOneByCode('ROLE_SUPER_ADMIN');
         $userInstance = $entityManager->getRepository('UVDeskCoreFrameworkBundle:UserInstance')->findOneBy([
